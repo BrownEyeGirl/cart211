@@ -23,7 +23,7 @@ let alph = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n'
 
 // preload image 
 function preload() {
-    img = loadImage('assets/thecreation.jpg');
+    img = loadImage('assets/thecreation1.jpg');
 }
 
 // Set Up Canvas, Binary Text, Image
@@ -79,7 +79,7 @@ function drawPixBasic() {
             
             // sets style 
             fill(0, 255, 0); //turns text green 
-            textSize(map(grayVal, 0, 255, 1, 10));  // maps the grayscale value formula onto my text size range (5-15px)
+            textSize(map(grayVal, 0, 255, 1, 15));  // maps the grayscale value formula onto my text size range (5-15px)
             
             // loops to beginning of text string  
             if(reader >= binaryText.length) {
