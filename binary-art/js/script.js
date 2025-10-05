@@ -33,7 +33,7 @@ function setup() {
     w = img.width;
     h = img.height;  
     let cnv = createCanvas(w, h); 
-    cnv.mouseClicked(drawPixBasic);
+    cnv.mouseMoved(drawPixBasic);
 
 
     // Binary Text 
