@@ -23,15 +23,15 @@ let alph = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n'
 
 // preload image 
 function preload() {
-    img = loadImage('assets/thecreation1.jpg');
+    img = loadImage('assets/thecreation2.jpg');
 }
 
 // Set Up Canvas, Binary Text, Image
 function setup() {
 
     // Canvas 
-    w = img.width;
-    h = img.height;  
+    w = (img.width);
+    h = (img.height);  
     let cnv = createCanvas(w, h); 
     cnv.mouseMoved(drawPixBasic);
 
@@ -71,8 +71,8 @@ function drawPixBasic() {
     reader = 0; 
 
     // Generates grid by column (x) and row (y) 
-    for(let y = 10; y < img.height; y+=8) { // columns for pix  
-        for(let x = 0; x < img.width; x+=8) { // rows for pix
+    for(let y = 10; y < h; y+=8) { // columns for pix  
+        for(let x = 0; x < w; x+=8) { // rows for pix
 
             let sq = img.get(x, y); // gets colour at x,y. returns array [R, G, B, A] but since the image is black and white 
             let grayVal = (0.299 * sq[0]) + (0.587 * sq[1]) + (0.114 * sq[2]) // FORMULA WRITTEN BY CHATGPT, accounts for human perception of light to take RGB and turn it grayscale
