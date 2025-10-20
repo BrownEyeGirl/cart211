@@ -134,6 +134,11 @@ footer a {
     display: block; 
 }
 
+.im:hover {
+    width: 103%;
+    height: auto;
+}
+
 /* address each individual image for masonry grid */
 .im1 {
     grid-column-start: 1;
@@ -210,7 +215,7 @@ footer a {
 }
 
 .social .fa {
-    font-size: 30px;
+    font-size: 3em;
     padding: 12px;
     color: gray; 
 }
