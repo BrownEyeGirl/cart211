@@ -113,25 +113,138 @@ footer a {
 .books {
     display: grid; 
     grid-template-columns: repeat(12,fr);
-    /*grid-template-columns: auto auto auto;*/
-    max-width: 100%; 
-    gap: 16px; /* gutter size between grid rows and columns */
+    /*grid-template-columns: auto auto auto; */
+    gap: 10px; /* gutter size between grid rows and columns */
+    margin: 0; 
+    padding: 0; 
 }
-/*start comment */
-    .books img {
-        display: block;
-        width: 100%; 
-        height: auto; 
-    }
 
-    .books > div { /* styling the direct child of the div */
-        text-align: center; 
-        padding: 10px;
-    }
+.books figure{
+    position: relative; 
+    display: inline-block; 
+    cursor: pointer; 
+}
 
-    .books figure { /* targets figure tags in the books div */
-        margin: 0; 
-    }
+.im { /* create image class */
+    width: 100%; 
+    height: auto; 
+    aspect-ratio: 1 / 1;
+    object-fit: cover; 
+    box-sizing: border-box; 
+    display: block; 
+}
+
+/* address each individual image for masonry grid */
+.im1 {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+
+.im2 {
+    grid-column: 4 / 7; 
+    grid-row: 1 / 3;
+}
+
+.im3 {
+    grid-column: 7 / 13; 
+    grid-row: 1 / 6; 
+}
+
+.im4 {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row: 3 / 6; 
+}
+
+.im5 {
+    grid-column: 4 / 7; 
+    grid-row: 3 / 5; 
+}
+
+.im6 {
+    grid-column: 1 / 7; 
+    grid-row: 5 / 9; 
+}
+
+.im7 {
+    grid-column: 7 / 10; 
+    grid-row: 5 / 7; 
+}
+
+.im8 {
+    grid-column: 10 / 13; 
+    grid-row: 5 / 7; 
+}
+
+.im9 {
+    grid-column: 7 / 10;  
+    grid-row: 7 / 9; 
+}
+
+
+.im10 {
+    grid-column: 10 / 13; 
+    grid-row: 7 / 9; 
+}
+
+
+.im11 {
+    grid-column: 10 / 13; 
+    grid-row: 5 / 7; 
+}
+
+.im12 {
+    grid-column: 4 / 7; 
+    grid-row: 9 / 11; 
+}
+
+.social {
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    text-align: center;
+    padding: 20px 0; 
+    color: gray;
+}
+
+.social .fa {
+    font-size: 30px;
+    padding: 12px;
+    color: gray; 
+}
+
+/*start comment 
+.books img {
+    display: block;
+    width: 100%; 
+    height: auto; 
+}
+
+.books > div { /* styling the direct child of the div 
+    text-align: center; 
+    padding: 10px;
+}
+
+.books figure { /* targets figure tags in the books div 
+    margin: 0; 
+}
+
+table img {
+    max-width: 100%; 
+    max-height: 100%; 
+}
+
+.books {
+    display: grid; 
+    grid-template-columns: repeat(12,fr);
+    /*grid-template-columns: auto auto auto;
+    gap: 0px; /* gutter size between grid rows and columns 
+    margin: 0; 
+    padding: 0; 
+}
+
 /* end comment */
 
 article figure figcaption { 
@@ -139,10 +252,7 @@ article figure figcaption {
     font-size: 12px; 
 }
 
-table img {
-    max-width: 100%; 
-    max-height: 100%; 
-}
+
 
 @media (max-width: 600px) {
     nav {
