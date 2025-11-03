@@ -37,12 +37,19 @@
         <header>
              <!-- Navigation -->
         <nav>
-            <div class="logo"><a href="#"><img src="assets/logo.png" alt="logo" ></a>
+            <div class="logo"><a href="index.html"><img src="assets/logo.png" alt="logo" ></a>
             </div>
             <div class="menu1">
+                <button class="close-menu">&times;</button>
                 <a href="index.html">INDEX</a> <br>
-                <a href="index.html">STORIES</a> <br>
+                <a href="stories.html">STORIES</a> <br>
                 <a href="#">ABOUT</a>
+            </div>
+
+            <div class="hamburger-menu">
+                <button>
+                    <span class="fa fa-bars"></span>
+                </button>
             </div>
         </nav>
             
@@ -136,6 +143,24 @@
 
             <small><em>This website was created as part of a school project. All content and design are copyright Skkyla Trousdale, Student, 2025</em></small> <!-- em stands for emphasis-->
     </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const hamburgerButton = document.querySelector('.hamburger-menu button'); 
+            const closeButton = document.querySelector('.close-menu'); 
+            const menu1 = document.querySelector('.menu1');
+
+            hambuergerButton.addEventListener('click', () => {
+                menu1.classList.add('.menu-deployed'); 
+            }); 
+
+            closeButton.addEventListener('click', () => {
+                menue1.classList.remove('.menu-deployed'); 
+            })
+
+        })
+    </script>
+
+
     </main>
 </body>
 </html>

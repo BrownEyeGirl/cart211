@@ -82,6 +82,28 @@ nav a:hover {
     color: darkgrey;
 }
 
+.hamburger-menu {
+    display: none; 
+    align-items: center; 
+    justify-content: center; 
+}
+
+.hamburger-menu button {
+    background: none; 
+    align-items: center; 
+    justify-content: center; 
+}
+
+.hamburger-menu button .fa-bars {
+    cursor: pointer; 
+    font-size: 2.5em; 
+}
+
+.close-menu {
+    display: none; 
+}
+
+
 section {
     margin-bottom: 30px;
     text-align: justify; 
@@ -110,21 +132,6 @@ footer a {
     color: black;
 }
 
-.books {
-    display: grid; 
-    grid-template-columns: repeat(12,fr);
-    /*grid-template-columns: auto auto auto; */
-    gap: 10px; /* gutter size between grid rows and columns */
-    margin: 0; 
-    padding: 0; 
-}
-
-.books figure{
-    position: relative; 
-    display: inline-block; 
-    cursor: pointer; 
-}
-
 .im { /* create image class */
     width: 100%; 
     height: auto; 
@@ -138,6 +145,46 @@ footer a {
     width: 103%;
     height: auto;
 }
+
+.books {
+    display: grid; 
+    grid-template-columns: repeat(12,1fr);
+    /*grid-template-columns: auto auto auto; */
+    max-width: 100%; 
+    gap: 10px; /* gutter size between grid rows and columns */
+    margin: 0; 
+    padding: 0; 
+}
+
+.books img {
+    display: block; 
+    width: 100%; 
+    height: auto; 
+}
+
+.books figure{
+    position: relative; 
+    display: inline-block; 
+    cursor: pointer; 
+}
+
+
+.stories-left{
+    grid-column: 1 / 7; 
+}
+.stories-rigth{
+    grid-column: 7 / 13; 
+}
+
+.stories-rigth p {
+    text-align: left; 
+}
+
+.stories-rigth h2 {
+    text-align: center; 
+    font-size: 2em; 
+}
+
 
 /* address each individual image for masonry grid */
 .im1 {
@@ -220,6 +267,11 @@ footer a {
     color: gray; 
 }
 
+.fa:hover {
+    color: lightgray; 
+}
+
+
 /*start comment 
 .books img {
     display: block;
@@ -259,7 +311,60 @@ article figure figcaption {
 
 
 
-@media (max-width: 600px) {
+@media (max-width: 750px) {
+
+    .close-menu {
+        display: block; 
+        position: absolute; 
+        top: 20px; 
+        right: 20px; 
+        font-size: 2em; 
+        color: gray; 
+    }
+
+    button {
+        border-width: 0px; 
+        background-color: white;
+    }
+
+    .hamburger-menu {
+        display: flex; 
+        grid-column: auto;
+    }
+
+    .menu-deployed {
+        display: flex important; 
+        flex-direction: column;
+        justify-content: center; 
+        align-items: center; 
+        width: 100%; 
+        height: 100vh; 
+        position: fixed; 
+        top: 0; 
+        left: 0; 
+        background: white; 
+        z-index: 11000; 
+        padding-top: 50px; 
+    }
+
+    .menu1 {
+        display: none; 
+        position: fixed; 
+        top: 0; left: 0; 
+        width:100%; height: 100%; 
+        background: white; 
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000; 
+    }
+
+    .menu1 a {
+        padding: 20px; 
+        color: gray; 
+    }
+
+
     nav {
         margin: 0 auto; 
         margin-bottom: 50px; 
