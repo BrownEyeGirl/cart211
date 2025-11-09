@@ -1,0 +1,52 @@
+
+.title {
+    text-align: center; 
+}
+
+h1 {
+    font-family: "VT323", monospace;
+    font-weight: 400;
+    font-size: 60px; 
+    font-style: normal;
+    color: blue; 
+    line-height: 2; 
+}
+
+.about-txt { /* about text div */
+    width: 50%;
+    margin: 0 auto; /* center div */  
+    margin-top: 0; 
+    height: 100vh; 
+    width: 50vh; 
+    text-align: left; 
+    display: fixed;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .about-txt h1 {
+    font-family: "VT323", monospace;
+    font-weight: 400;
+    font-style: normal;
+    text-align: center; 
+  }
+  
+  #typedtext {
+    margin-top: 50%; 
+    font-family: "VT323", monospace;
+    font-weight: 400;
+    font-size: 20px; 
+    word-spacing: 3px; 
+    font-style: normal;
+    color: blue; 
+
+   
+  }
+  
+  .enter-button {
+    position: fixed;
+    bottom: 100px;
+    right: 100px;
+    text-align: right;  
+
+  }

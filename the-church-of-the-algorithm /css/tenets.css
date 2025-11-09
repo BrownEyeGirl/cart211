@@ -1,0 +1,56 @@
+
+
+body {
+    padding: 0;
+    margin: 0;
+    display: grid; /* Set up the grid and justify/align to center */
+    justify-content: center;
+    align-content: center;
+    height: 100vh; /* Body is the height of the viewport */
+    overflow: hidden; /* Hide anything that goes off the window size */
+    background-color: white;
+  }
+
+  h1 {
+    font-family: "VT323", monospace;
+    font-weight: 400;
+    font-size: 60px; 
+    font-style: normal;
+    color: blue; 
+    line-height: 2; 
+}
+
+p {
+    font-family: "VT323", monospace;
+    font-weight: 400;
+    font-size: 20px; 
+    text-decoration: underline;
+    font-style: normal;
+    color: blue; 
+    line-height: 2; 
+}
+
+.click-here {
+    animation: blink 1.2s infinite; /* Apply the blink animation */
+    font-family: "VT323", monospace;
+    font-weight: 400;
+    font-size: 15px; 
+    font-style: normal;
+    color: blue; 
+
+}
+    
+@keyframes blink {
+    0% {
+        opacity: 0; /* Start completely transparent */
+    }
+    50% {
+        opacity: 1; /* Fully visible at 50% through the animation */
+        color: rgb(44, 157, 255); 
+    }
+    100% {
+        opacity: 0; /* Back to transparent at the end */
+        color: blue; 
+    }
+}
+

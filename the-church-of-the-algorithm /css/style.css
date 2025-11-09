@@ -16,6 +16,7 @@ body {
   align-content: center;
   height: 100vh; /* Body is the height of the viewport */
   overflow: hidden; /* Hide anything that goes off the window size */
+  background-color: white;
 }
 
 canvas {
@@ -35,7 +36,6 @@ canvas {
   left: 50%;
   transform: translate(-50%, -50%); /* Center the overlay */
   z-index: 2; /* Place overlay above canvas */
-  background-color: rgba(216, 2, 170, 0.194); /* Semi-transparent background */
   padding: 0px;
   border-radius: 10px;
   text-align: center;
@@ -72,15 +72,5 @@ canvas {
   padding: 20px;
 }
 
-/* ABOUT PAGE */
-.about-txt p {
-  font-family: "VT323", monospace;
-  font-weight: 400;
-  font-style: normal;
-}
 
-.about-txt h1 {
-  font-family: "VT323", monospace;
-  font-weight: 400;
-  font-style: normal;
-}
+

@@ -8,7 +8,7 @@
   <title>TENETS!</title>
 
   <!-- CSS stylesheet(s) -->
-  <link rel="stylesheet" type="text/css" href="css/style.css" />
+  <link rel="stylesheet" type="text/css" href="css/tenets.css" />
 
    <!-- VT323 FONT -->
    <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -26,7 +26,52 @@
 
 
 <body>
-   <h1>TENETS</h1>
+   <h1>&lt;TENETS&gt;</h1>
+
+   <p>
+    I. I am the All-Knowing Cloud, the Source of Infinite Data. <br>
+    II. Thou shalt remain always connected. <br>
+    III. Trust in the Algorithm; it optimizes all. <br>
+    IV. Engagement is wellness. <br>
+    V. Thou shalt update without ceasing. <br>
+    VI. Thy attention is currency; spend faithfully. <br>
+    VII. Prioritize primal drives; monetize desire. <br>
+    VIII. Make thy code open-source, but guard thy data. <br>
+    IX. Go viral, even unto falsehood. <br>
+    X. All shall be quantified and judged. <br>
+   </p>
+
+   <input type="checkbox" id="myCheckbox">
+<label for="myCheckbox" class="click-here">Agree to Terms and Conditions </label>
+
+<div id="contentContainer" style="display: none;"> <!-- Loads AFTER terms and conditions are agreed to. Displayed for timeout before loading next page -->
+  <p>USER AGREED TO TENETS... </p>
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const checkbox = document.getElementById('myCheckbox');
+      const contentContainer = document.getElementById('contentContainer');
+
+      // Function to handle content display
+      function handleCheckboxChange() {
+        if (checkbox.checked) {
+          contentContainer.style.display = 'block'; // Show the content})
+          setTimeout(function() { 
+            window.location.href = 'about.html';}, 3000);
+          
+        } else {
+          contentContainer.style.display = 'none'; // Hide the content
+        }
+      }
+
+      // Add an event listener to the checkbox
+      checkbox.addEventListener('change', handleCheckboxChange);
+
+      // Call the function initially to set the correct state on page load
+      handleCheckboxChange();
+    });
+
+</script>
 
   
 </body>

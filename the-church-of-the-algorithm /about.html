@@ -8,7 +8,7 @@
     <title>CHURCH_</title>
 
     <!-- CSS STYLESHEET -->
-    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" type="text/css" href="css/about.css" />
 
     <!-- VT323 FONT -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,19 +25,70 @@
 
 <body>
 
+    <div class="title">
+        <h1>&lt;ABOUT THE CHURCH&gt;</h1>
+    </div>
     <div class="about-txt">
-    <h1>ABOUT THE CHURCH</h1>
-        <p>
-        The sacred has become an interface - we’ve shifted our dedication to the smooth surfaces that know your name, your identity, and your next move. My project idea is The Church (.com): a satirical project reimagining Zuboff’s vision of surveillance capitalism as a new theology in the digital age. In the church’s faith, data is scripture, the click is a confession, and the tech facilitating it ascends as a omniscient, invisible, and insatiable modern tech god. What Zuboff calls “behavioural surplus” becomes a sacred offering, human identity as a tithe to the machines of prediction in exchange for convenience and belonging.
-        </p>
+        <div id="typedtext" style="float: left;"></div>
 
-        <p>
-        The website is essentially a digital cathedral, ten pages as ten commandments, with each exploring an aspect of this divine algorithmic idol. Users will navigate interfaces that mirror worship, playing on ideas in the top 5 global religions - Christianity, Islam, Hinduism, Buddhism, and Sikhism.
-        The Church (.com) exposes the daily practice of our clicks. As god exists in the clouds, so does our algorithmic deity in the Cloud. Prediction is like prophecy, an oracle created by click physicists in Silicon Valley, being fed and formed by our unregulated private behaviours to garner more power over populations.
-        </p>
     </div>
 
-   <a href="mainpage.html"><button>enter the main page</button></a>
+    <a class='enter-button' id="enter-button" href="mainpage.html"><button>enter the main page</button></a>
+
+
+    <script>
+
+        var aText = new Array('Welcome to the Church of the Algorithm', 'where data is scripture, the click is a confession, prediction is prophecy, and the tech facilitating it ascends as a omniscient, invisible, and insatiable modern tech god.','Zuboff’s vision of surveillance capitalism reimagined as a new theology in the digital age. “behavioural surplus” becomes a sacred offering,','human identity as a tithe to the machines of prediction in exchange for convenience and belonging.','Enjoy your stay in the digital cathedral, explore with your daily practice of clicks. As god exists in the clouds, so does our algorithmic deity in the Cloud.');
+        var iSpeed = 20; // time delay of print out
+        var iIndex = 0; // start printing array at this posision
+        var iArrLength = aText[0].length; // the length of the text array
+        var iScrollAt = 20; // start scrolling up at this many lines
+        
+        var iTextPos = 0; // initialise text position
+        var sContents = ''; // initialise contents variable
+        var iRow; // initialise current row
+
+        const myElement = document.getElementById('enter-button');
+        myElement.hidden = true;
+        
+        function typewriter()
+        {
+        sContents =  ' ';
+        iRow = Math.max(0, iIndex-iScrollAt);
+        var destination = document.getElementById("typedtext");
+        
+        while ( iRow < iIndex ) {
+            sContents += aText[iRow++] + '<br />';
+        }
+
+        destination.innerHTML = sContents + aText[iIndex].substring(0, iTextPos) + "_";
+        if ( iTextPos++ == iArrLength ) {
+            iTextPos = 0;
+            iIndex++;
+            if ( iIndex != aText.length ) {
+            iArrLength = aText[iIndex].length;
+            setTimeout("typewriter()", 500);
+            }
+
+            else {
+                myElement.hidden = false;
+            }
+        }
+         else {
+        setTimeout("typewriter()", iSpeed);
+        }
+       
+        //myElement.style.display = 'block'; 
+
+        }
+
+
+        typewriter();
+
+    
+    </script>
+ 
+   
 </body>
 
 </html>
