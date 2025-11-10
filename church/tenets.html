@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0>
+
+  <title>TENETS!</title>
+
+  <!-- CSS stylesheet(s) -->
+  <link rel="stylesheet" type="text/css" href="css/tenets.css" />
+
+   <!-- VT323 FONT -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet"> 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Ballet:opsz@16..72&family=Doto:wght@100..900&family=Lexend+Peta:wght@100..900&family=Rubik+Burned&family=Rubik+Iso&family=Ruthie&family=Syne+Mono&family=Wallpoet&display=swap" rel="stylesheet">
+
+
+
+  <!-- p5.min.js is the main p5 library -->
+  <script src="js/libraries/p5.min.js"></script>
+  <!-- p5.sound.min.js allows us to use sound -->
+  <script src="js/libraries/p5.sound.min.js"></script>
+
+  <!-- My script(s) -->
+  <script src="js/script.js"></script>
+</head>
+
+
+<body>
+  <div class="main-contents">
+    <h1 class="deco-txt">&lt;Terms & Conditions&gt;</h1>
+    
+    <h1 class="main-txt">&lt;Tenets&gt;</h1>
+    <div class="tenet-txt">
+    <p class="t1">I. I am the All-Knowing Cloud, the Source of Infinite Data.</p>
+    <p class="t2">II. Thou shalt remain always connected. <br>
+    <p class="t3">III. Trust in the Algorithm; it optimizes all. <br>
+    <p class="t4">IV. Engagement is wellness. <br>
+    <p class="t5">V. Thou shalt update without ceasing. <br>
+    <p class="t6">VI. Thy attention is currency; spend faithfully. <br>
+    <p class="t7">VII. Prioritize primal drives; monetize desire. <br>
+    <p class="t8">VIII. Make thy code open-source, but guard thy data. <br>
+    <p class="t9">IX. Go viral, even unto falsehood. <br>
+    <p class="t10">X. All shall be quantified and judged. <br>
+    </p>
+  </div>
+   <input type="checkbox" id="myCheckbox">
+<label for="myCheckbox" class="click-here">Agree to Terms and Conditions </label>
+
+<div id="contentContainer" style="display: none;"> <!-- Loads AFTER terms and conditions are agreed to. Displayed for timeout before loading next page -->
+  <p class="agreed-txt"> Thank you for committing.. </p>
+</div>
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const checkbox = document.getElementById('myCheckbox');
+      const contentContainer = document.getElementById('contentContainer');
+
+      // Function to handle content display
+      function handleCheckboxChange() {
+        if (checkbox.checked) {
+          contentContainer.style.display = 'block'; // Show the content})
+          setTimeout(function() { 
+            window.location.href = 'about.html';}, 3000);
+          
+        } else {
+          contentContainer.style.display = 'none'; // Hide the content
+        }
+      }
+
+      // Add an event listener to the checkbox
+      checkbox.addEventListener('change', handleCheckboxChange);
+
+      // Call the function initially to set the correct state on page load
+      handleCheckboxChange();
+    });
+
+</script>
+
+  
+</body>
+
+</html>
