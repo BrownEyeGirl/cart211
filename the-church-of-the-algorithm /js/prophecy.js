@@ -62,16 +62,18 @@ function mouseClicked() {
 }
 
 function circles() {
+    background(255);
     fill(0); 
     ellipse(100, 100, 40); 
     for(let r = 0; r < height; r += 10) {
         for(let c = 0; c < width; c+= 10) {
              
             fill(0); 
-            ellipse(c, r, map(mouseX, 0, width, 2, 8)); 
+            ellipse(c, r, map(mouseX, 0, mouseY, 2, 8)); 
              
         }
     }
+    
 }
 
 
