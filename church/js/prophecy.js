@@ -17,6 +17,9 @@ let target;
 let clicks; 
 let maxClicks = 10; 
 
+// CIRCLES 
+let size; 
+
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
@@ -67,10 +70,8 @@ function circles() {
     ellipse(100, 100, 40); 
     for(let r = 0; r < height; r += 10) {
         for(let c = 0; c < width; c+= 10) {
-             
             fill(0); 
             ellipse(c, r, map(mouseX, 0, mouseY, 2, 8)); 
-             
         }
     }
     
@@ -87,9 +88,15 @@ function targetAudience() {
 
   push(); 
     textSize(20);
-  text('Target Audience Detected...', width/2-120, height/4);
+    text('Target Audience Detected...', width/2-120, height/4);
   pop(); 
 
   image(target, width/2-target.width/2,height/2-target.height/2); 
   //target.hide(); 
 }
+
+ // Change the background color.
+ function repaint() {
+    let g = random(255);
+    background(g);
+ }
