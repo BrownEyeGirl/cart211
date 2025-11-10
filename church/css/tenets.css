@@ -8,8 +8,7 @@ body {
     align-content: center;
     height: 100vh; /* Body is the height of the viewport */
     overflow: hidden; /* Hide anything that goes off the window size */
-    background-color: black;
-    background-image: url('https://i.pinimg.com/originals/c7/d2/9f/c7d29f06ce5087d5317ea9b6ce2e8f8f.gif');
+    background-color: white;
     background-size: 100% auto; /* 100% width, auto height */
 }
 
