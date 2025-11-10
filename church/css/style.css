@@ -1,0 +1,76 @@
+/*********************************************
+
+CSS 
+
+**********************************************/
+
+
+
+/* MAIN ALIGNMENT */ 
+/* style.css */
+body {
+  padding: 0;
+  margin: 0;
+  display: grid; /* Set up the grid and justify/align to center */
+  justify-content: center;
+  align-content: center;
+  height: 100vh; /* Body is the height of the viewport */
+  overflow: hidden; /* Hide anything that goes off the window size */
+  background-color: white;
+}
+
+canvas {
+  display: block; /* Remove extra space below canvas */
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1; /* Place canvas below overlay */
+}
+
+/* base css code from the internet, how to overlay a div on a p5 canvas */ 
+#overlay-content {
+  position: absolute;
+  height: 100vh; /* Body is the height of the viewport */
+  width: 100vh; /* Body is the width of the viewport */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Center the overlay */
+  z-index: 2; /* Place overlay above canvas */
+  padding: 0px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+
+/* FILE ALIGNMENT */ 
+.file-b0 {
+  padding: 60px; 
+  width: 60px; 
+}
+
+.file-b1 {
+  width: 60px;
+  top: 50%; 
+  padding: 50px;
+}
+
+.file-b2 {
+  width: 60px;
+  top: 80%; 
+  padding: 20px;
+}
+
+.file-b3 {
+  width: 60px;
+  top: 80%; 
+  padding: 20px;
+}
+
+.file-b4 {
+  width: 60px;
+  top: 80%; 
+  padding: 20px;
+}
+
+
+

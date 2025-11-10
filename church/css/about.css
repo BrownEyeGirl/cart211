@@ -1,0 +1,101 @@
+
+body {
+  background-color: black;
+  background-image: url('https://i.pinimg.com/originals/c7/d2/9f/c7d29f06ce5087d5317ea9b6ce2e8f8f.gif');
+  background-size: 100% auto; /* 100% width, auto height */
+}
+
+h1 {
+    /*font-family: "VT323", monospace;
+    font-weight: 400;
+    font-size: 60px; 
+    font-style: normal;
+     */
+
+
+    font-family: "Ballet", cursive;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-size: 100px; 
+    font-style: normal;
+
+    position: absolute;
+      bottom: 3%; /* Vertically center the rotated h1 */
+      right: 60%; /* Position it on the left side of the page */
+      transform: translateY(-50%) rotate(-90deg); /* Adjust vertical position and rotate */
+      transform-origin: center;
+      white-space: nowrap;
+    order: 0;
+    color: rgb(66, 192, 255);
+}
+
+.about-txt { /* about text div */
+    width: 50%;
+    margin: 0 auto; /* center div */  
+    margin-top: 0; 
+    height: 100vh; 
+    width: 50vh; 
+    text-align: left; 
+    display: fixed;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(244, 253, 255);
+    padding: 100px;
+  }
+
+  
+  .about-txt h1 {
+    font-family: "Ballet", cursive;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-size: 140px; 
+    font-style: normal;
+
+    position: absolute;
+      bottom: 3%; /* Vertically center the rotated h1 */
+      right: 45%; /* Position it on the left side of the page */
+      transform: translateY(-50%) rotate(-90deg); /* Adjust vertical position and rotate */
+      transform-origin: center;
+      white-space: nowrap;
+    order: 0;
+  
+    color: rgb(157, 217, 255); 
+    text-shadow:
+      0 0 5px rgb(154, 221, 255), /* Smaller, sharper glow */
+      0 0 10px rgb(135, 213, 255), /* Medium glow */
+      0 0 20px rgb(206, 228, 240), /* Larger, softer glow */
+      0 0 40px rgb(165, 224, 255); /* Even larger, softer glow */
+      
+  }
+
+  
+
+
+
+  #typedtext {
+    margin-top: 50%; 
+    font-family: "VT323", monospace;
+    font-weight: 400;
+    font-size: 20px; 
+    word-spacing: 3px; 
+    font-style: normal;
+    color: rgb(0, 0, 0); 
+    text-shadow:
+      0 0 5px rgb(0, 41, 63), /* Smaller, sharper glow */
+      0 0 10px rgb(38, 179, 255), /* Medium glow */
+      0 0 20px rgb(38, 179, 255), /* Larger, softer glow */
+      0 0 40px rgb(194, 234, 255); /* Even larger, softer glow */
+      
+  }
+  
+  .enter-button {
+    position: fixed;
+    bottom: 100px;
+    right: 200px;
+    text-align: right;  
+  }
+
+  .enter-key {
+    width: 100px; 
+  }
+

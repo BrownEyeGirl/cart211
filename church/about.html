@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0>
+
+    <title>CHURCH_</title>
+
+    <!-- CSS STYLESHEET -->
+    <link rel="stylesheet" type="text/css" href="css/about.css" />
+
+    <!-- VT323 FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ballet:opsz@16..72&family=Doto:wght@100..900&family=Lexend+Peta:wght@100..900&family=Rubik+Burned&family=Rubik+Iso&family=Ruthie&family=Syne+Mono&family=Wallpoet&display=swap" rel="stylesheet">
+
+
+    <!-- P5 MAIN & SOUND LIBRARY -->
+    <script src="js/libraries/p5.min.js"></script>
+    <script src="js/libraries/p5.sound.min.js"></script>
+
+    <!-- JAVASCRIPT -->
+    <script src="js/about.js"></script>
+    </head>
+
+<body>
+
+   
+    <div class="about-txt">
+        <div id="typedtext" style="float: left;"></div>
+        <div class="title">
+            <h1>&lt;Introduction&gt;</h1>
+        </div>
+    </div>
+   
+
+    <a class='enter-button' id="enter-button" href="mainpage.html"><img src="assets/keys/enter.png" class="enter-key"></a>
+
+
+    <script>
+
+        var aText = new Array('Welcome to the Church of the Algorithm', 'where data is scripture, the click is a confession, prediction is prophecy, and the tech facilitating it ascends as a omniscient, invisible, and insatiable modern tech god.','Zuboff’s vision of surveillance capitalism reimagined as a new theology in the digital age. “behavioural surplus” becomes a sacred offering,','human identity as a tithe to the machines of prediction in exchange for convenience and belonging.','Enjoy your stay in the digital cathedral, explore with your daily practice of clicks. As god exists in the clouds, so does our algorithmic deity in the Cloud.');
+        var iSpeed = 20; // time delay of print out
+        var iIndex = 0; // start printing array at this posision
+        var iArrLength = aText[0].length; // the length of the text array
+        var iScrollAt = 20; // start scrolling up at this many lines
+        
+        var iTextPos = 0; // initialise text position
+        var sContents = ''; // initialise contents variable
+        var iRow; // initialise current row
+
+        const myElement = document.getElementById('enter-button');
+        myElement.hidden = true;
+        
+        function typewriter()
+        {
+        sContents =  ' ';
+        iRow = Math.max(0, iIndex-iScrollAt);
+        var destination = document.getElementById("typedtext");
+        
+        while ( iRow < iIndex ) {
+            sContents += aText[iRow++] + '<br />';
+        }
+
+        destination.innerHTML = sContents + aText[iIndex].substring(0, iTextPos) + "_";
+        if ( iTextPos++ == iArrLength ) {
+            iTextPos = 0;
+            iIndex++;
+            if ( iIndex != aText.length ) {
+            iArrLength = aText[iIndex].length;
+            setTimeout("typewriter()", 500);
+            }
+
+            else {
+                myElement.hidden = false;
+            }
+        }
+         else {
+        setTimeout("typewriter()", iSpeed);
+        }
+       
+        //myElement.style.display = 'block'; 
+
+        }
+
+
+        typewriter();
+
+    
+    </script>
+ 
+   
+</body>
+
+</html>
