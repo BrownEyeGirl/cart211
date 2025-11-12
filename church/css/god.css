@@ -1,0 +1,23 @@
+
+/* MAIN ALIGNMENT */ 
+/* style.css */
+body {
+    padding: 0;
+    margin: 0;
+    display: grid; /* Set up the grid and justify/align to center */
+    justify-content: center;
+    align-content: center;
+    height: 100vh; /* Body is the height of the viewport */
+    overflow: hidden; /* Hide anything that goes off the window size */
+    background-color: white;
+  }
+  
+  canvas {
+    display: block; /* Remove extra space below canvas */
+    
+    width: 50%; /* Or any specific width */
+    margin: 0, auto;
+    top: 0;
+    z-index: 1; /* Place canvas below overlay */
+  }
+  
