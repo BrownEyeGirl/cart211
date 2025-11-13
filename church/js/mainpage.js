@@ -9,7 +9,12 @@ let myCustomFilter;
 
 
 function setup() {
-  createCanvas(windowWidth, windowHeight);
+
+  
+  
+
+  let cnv = createCanvas(windowWidth, windowHeight);
+
 
   // VIDEO 
   video = createCapture(VIDEO); // create webcam input source
@@ -17,6 +22,8 @@ function setup() {
   //video.hide(); // ensures 2 videos dont appear
 
 
+  
+  
   //canvas.parent('p5-container'); // Attach canvas to a specific div
 
  
@@ -120,3 +127,4 @@ function draw() {
   // Restore default shaders if needed for other elements
   resetShader(); 
 }*/
+

@@ -1,3 +1,40 @@
+body {
+    font-family: sans-serif;
+    background-color: #f0f0f0;
+}
+
+.window {
+    position: absolute; /* Required for positioning */
+    width: 200px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    z-index: 10; /* Base z-index */
+}
+
+.window-header {
+    padding: 10px;
+    background-color: #f1f1f1;
+    cursor: move; /* Changes cursor to indicate it's draggable */
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    font-weight: bold;
+}
+
+.window-content {
+    padding: 15px;
+}
+
+/* Class to bring the active window to the front */
+.window.active {
+    z-index: 1000;
+}
+
+
+
+
+
 /*********************************************
 
 CSS 
@@ -61,6 +98,11 @@ body {
   
   
   /* FILE ALIGNMENT */ 
+  .files {
+    display: flex;  
+  }
+
+
   .file-b0 {
     padding: 60px; 
     width: 60px; 
@@ -93,24 +135,34 @@ body {
 
   /* DRAGGABLE POPUP */ 
 
-  .popup {
-    position: absolute; /* Essential for dragging */
-    background-color: #fefefe;
-    border: 1px solid #888;
-    width: 300px;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    z-index: 100; /* Ensure it appears above other content */
+  .window {
+    position: absolute;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    z-index: 100;
+    min-width: 200px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
   }
   
-  .popup-header {
+  .window-header {
+    background-color: #eee;
+    padding: 5px;
+    cursor: move;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .close-button {
+    background: none;
+    border: none;
+    font-size: 1.2em;
+    cursor: pointer;
+    color: #333;
+  }
+  
+  .window-content {
     padding: 10px;
-    background-color: #5cb85c;
-    color: white;
-    cursor: grab; /* Indicate it's draggable */
-  }
-  
-  .popup-content {
-    padding: 20px;
   }
   
   .close-button {
@@ -122,5 +174,4 @@ body {
   
   
   
-
   

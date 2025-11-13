@@ -34,8 +34,12 @@ let grayVal;
 // CLICKS 
 let clickCount; 
 let factor; 
-
-
+let confess; 
+let click = {
+    x: 0, 
+    y: 0,
+    strength: 255
+}
 
 
 /* Load Images */ 
@@ -50,13 +54,16 @@ function setup() {
     // Load images 
     arrow = loadImage('assets/god/cursor3.png');
     arrow.resize(7, 0);
-    cloud = loadImage('assets/god/god2.png'); 
-    cloud.resize(0, width);
+    cloud = loadImage('assets/god/god3.png'); 
+    cloud.resize(width, height);
 
     cnv = createCanvas(600, 600); 
-    background(244, 253, 255); 
+   // background(244, 253, 255);
+   background(0); 
     cloud.resize(0, width); 
 
+    // CLICKS
+    confess=loadImage('assets/god/confess2.png'); 
     clickCount = 0; 
     factor = 50; 
 
@@ -66,7 +73,8 @@ function draw() {
 
      // increase click count
     // clickCount++; 
-    background(244, 253, 255); 
+    //background(244, 253, 255); 
+    background(255);
      // draw a new click 
     drawCloud(); 
     //factor -=1; 
@@ -75,6 +83,9 @@ function draw() {
 
 function mouseClicked() {
     clickCount++; 
+    click.x = mouseX; 
+    click.y = mouseY; 
+    click.strength = 255; 
 
     if(factor > 8) {
         factor-=1; 
@@ -86,6 +97,7 @@ function drawCloud() {
     // sets x and y at new click clickcount
     //factor = int(random(10, 20));
     let vibrate = int(random(1, 3)); 
+    cloud.resize(width, height);
 
     for(let xC = 0; xC < width; xC += factor) {
         for(let yC = 0; yC < height; yC += factor) {
@@ -95,19 +107,33 @@ function drawCloud() {
             // turn the cloud greyscale
             sq = cloud.get(xC, yC); // gets colour at x,y. returns array [R, G, B, A] but since the image is black and white 
             grayVal = (0.299 * sq[0]) + (0.587 * sq[1]) + (0.114 * sq[2]) // FORMULA WRITTEN BY CHATGPT, accounts for human perception of light to take RGB and turn it grayscale
-            grayVal = int(map(grayVal, 0, 300, 255, 0));
-
-            
-             tint(255, grayVal);
-             
-             image(arrow, xC+vibrate, yC+vibrate); //int(rantom(xC, xC+5)), yC);
+            grayVal = int(map(grayVal, 0, 200, 255, 0));
+            tint(255, grayVal);
+            vibrate = int(random(1, 3)); 
+            image(arrow, xC+vibrate, yC+vibrate); //int(rantom(xC, xC+5)), yC);
              //frameRate(10);
+
+             // CONFESS
+             tint(255, click.strength); 
+             confess.resize(150, 0);
+             image(confess, click.x-confess.width/2, click.y-confess.height/2); 
+             if(click.strength > 0) {
+                click.strength -=0; 
+             } 
 
            // fill(grayVal);
             //ellipse(xC, yC, 10);
         }
     }
 }
+
+
+
+
+
+
+
+
 
     //image(arrow, 5, 5);
 

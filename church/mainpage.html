@@ -8,7 +8,7 @@
   <title>CHURCH_</title>
 
   <!-- CSS stylesheet(s) -->
-  <link rel="stylesheet" type="text/css" href="css/mainpage.css" />
+  <link rel="stylesheet" type="text/css" href="css/drag.css" />
 
   <!-- VT323 FONT -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,31 +24,164 @@
   <!-- p5.sound.min.js allows us to use sound -->
   <script src="js/libraries/p5.sound.min.js"></script>
 
-  <!-- My script(s) -->
-  <script src="js/mainpage.js"></script>
+  <!-- BACKGROUND VIDEO CODE -->
+  <script src="js/script.js"></script>
+
 </head>
 
 <body>
+
    
     
+    <!-- FILES -->
     <div id="p5-container">
         <div id="overlay-content">
+        
+        <!-- background attempt-->
+        <div id="background-id">hi</div>
+
             <a id="myButton" style="background-color: rgba(216, 2, 170, 0.194);">< return</a>
             
-            <a href="sanctuary.html"><img class="file-b0" src="assets/files/file_sanctuary.png"></a>
-            <a href="angels.html"><img class="file-b1" src="assets/files/file_angels.png"></a>
-            <a href="god.html"><img class="file-b2" src="assets/files/file_god.png"></a>
-            <a href="prophecy.html"><img class="file-b3" src="assets/files/file_prophecy.png"></a>
-            <a href="tenets.html"><img class="file-b4" src="assets/files/file_tenets.png"></a>
+            <div class="files">
+                <a href="sanctuary.html"><img class="file-b0" src="assets/files/file_sanctuary.png"></a>
+                <div id="angel-window-trigger"><img class="file-b1" src="assets/files/file_angels.png"></div>
+                <div id="god-window-trigger"><img class="file-b2" src="assets/files/file_god.png"></div>
+                <a href="prophecy.html"><img class="file-b3" src="assets/files/file_prophecy.png"></a>
+                <a href="tenets.html"><img class="file-b4" src="assets/files/file_tenets.png"></a>
+            </div>
         
+            <!-- HEADER -->
             <h1>Church of the Algorithm</h1>
             
-            
 
+            <!-- POPUP HANDLERS -->
+        
+                <div class="window" id="angel-window" style="top: 50px; left: 50px;">
+                    <div class="window-header" >Angel Window<button class="close-button">X</button> </div>
+                    
+                    <div class="window-content">
+                        <p>This is the first draggable window.</p>
+                        <div id="output"></div>
+                    </div>
+                    
+                </div>
 
+                <div class="window" id="god-window" style="top: 150px; left: 250px;">
+                    <div class="window-header">God Window<button class="close-button">X</button> </div>
+                    <div class="window-content">
+                        <p>This is the second draggable window.</p>
+                        <div id="output2"></div>
+                    </div>
+                </div>
 
+                <div class="window" id="window3" style="top: 250px; left: 450px;">
+                    <div class="window-header">Window 3  <button class="close-button">X</button> </div>
+                    <div class="window-content">
+                        <p>This is the third draggable window.</p>
+                    </div>
+                </div>
+            </div>
+
+        
         </div>
-    </div>
-</body>
 
+            <!-- Code to make window draggable -->
+            <script>
+
+                let windows = document.querySelectorAll('.window');
+let activeWindow = null;
+let maxZIndex = 10;
+
+windows.forEach(function(windowElem) {
+    dragElement(windowElem);
+    const closeButton = windowElem.querySelector('.close-button');
+
+    // Bring window to front on click
+    windowElem.addEventListener('mousedown', function() {
+        if (activeWindow) {
+            activeWindow.classList.remove('active');
+        }
+        activeWindow = windowElem;
+        maxZIndex += 1;
+        activeWindow.style.zIndex = maxZIndex;
+        activeWindow.classList.add('active');
+    });
+
+    // Close button hides window
+    closeButton.addEventListener('click', () => {
+        windowElem.style.display = 'none';
+    });
+});
+
+// ---- NEW CODE: OPEN WINDOWS ON TRIGGER CLICK ----
+
+// Assuming window elements have IDs "angel-window" and "god-window"
+const angelWin = document.getElementById('angel-window');
+const godWin = document.getElementById('god-window');
+
+// And triggers like: <div id="angel-window-trigger">...</div>
+const angelTrig = document.getElementById('angel-window-trigger');
+const godTrig = document.getElementById('god-window-trigger');
+
+if (angelTrig && angelWin) {
+    angelTrig.addEventListener('click', () => {
+        angelWin.style.display = 'block';
+        bringToFront(angelWin);
+    });
+}
+
+if (godTrig && godWin) {
+    godTrig.addEventListener('click', () => {
+        godWin.style.display = 'block';
+        bringToFront(godWin);
+    });
+}
+
+// Helper function to bring window to front
+function bringToFront(windowElem) {
+    if (activeWindow) {
+        activeWindow.classList.remove('active');
+    }
+    activeWindow = windowElem;
+    maxZIndex += 1;
+    activeWindow.style.zIndex = maxZIndex;
+    activeWindow.classList.add('active');
+}
+
+// ---- DRAGGING FUNCTION ----
+function dragElement(elmnt) {
+    let pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+    let dragHandle = elmnt.querySelector('.window-header');
+
+    if (dragHandle) {
+        dragHandle.onmousedown = dragMouseDown;
+    } else {
+        elmnt.onmousedown = dragMouseDown;
+    }
+
+    function dragMouseDown(e) {
+        e.preventDefault();
+        pos3 = e.clientX;
+        pos4 = e.clientY;
+        document.onmouseup = closeDragElement;
+        document.onmousemove = elementDrag;
+    }
+
+    function elementDrag(e) {
+        e.preventDefault();
+        pos1 = pos3 - e.clientX;
+        pos2 = pos4 - e.clientY;
+        pos3 = e.clientX;
+        pos4 = e.clientY;
+        elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+        elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+    }
+
+    function closeDragElement() {
+        document.onmouseup = null;
+        document.onmousemove = null;
+    }
+}
+ </script>
+</body>
 </html>
