@@ -1,6 +1,6 @@
 body {
     font-family: sans-serif;
-    background-color: #f0f0f0;
+    
 }
 
 .window {
@@ -53,16 +53,9 @@ body {
     align-content: center;
     height: 100vh; /* Body is the height of the viewport */
     overflow: hidden; /* Hide anything that goes off the window size */
-    background-color: white;
   }
   
-  canvas {
-    display: block; /* Remove extra space below canvas */
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 1; /* Place canvas below overlay */
-  }
+  
   
   /* base css code from the internet, how to overlay a div on a p5 canvas */ 
   #overlay-content {

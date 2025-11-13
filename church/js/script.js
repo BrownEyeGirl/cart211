@@ -1,32 +1,43 @@
 
-/* BACKGROUND VID */ 
-function sketch1(p) {
-    //let video;
 
-    p.setup() = function() {
-        let cnv1 = p.createCanvas(600,600);
-        cnv1.parent('background-id');
-        p.background(0);
+// Setup function for the instance
+let mySketch = function(p) {
+    let video; 
+    p.setup = function() {
+        p.createCanvas(p.windowWidth, p.windowHeight); // Create a canvas for this instance
+
         // VIDEO 
-       // video = p.createCapture(p.VIDEO); // create webcam input source
-        //video.size(640, 480);  // specify the resolution of the webcam input (too high and you may notice performance issues, especially if you're extracting info from it or adding filters)
-    }
+       video = p.createCapture(p.VIDEO); // create webcam input source
+       video.size(640, 480);  // specify the resolution of the webcam input (too high and you may notice performance issues, especially if you're extracting info from it or adding filters)
+       video.hide(); 
+    };
+    
+      // Draw function for the instance
+      p.draw = function() {
+        p.background(220); // Set the background color (grayscale value 220)
+        // You can also use RGB values: p.background(255, 0, 0); for red
+        // Or a CSS color string: p.background("#FF00FF"); for magenta
+         // Display the video just like an image! 
+        p.image(video,0,0,p.width,p.height);
+        p.filter(p.INVERT);//will make you a GHOST
+        p.filter(p.GRAY);
 
-   p.draw() = function() { 
-        // Display the video just like an image! 
-       p.background(0);
-       // p.image(video,0,0,p.width,p.height);
-       // p.filter(INVERT);//will make you a GHOST
-       // p.filter(GRAY);
-    }
+       
+      };
 
-    /*p.windowResized() = function() {
-        p.resizeCanvas(windowWidth, windowHeight);
-    }*/
-  }
+      p.windowResized = function() {
+        p.resizeCanvas(p.windowWidth, p.windowHeight);
+     }
+    };
+    
+    // Create a new p5 instance and attach it to an HTML element (e.g., a div with id "my-canvas")
+    let myp5 = new p5(mySketch, 'my-canvas'); 
+    
+    
 
 
-// Function for the first canvas
+
+// Test Canvas
 function sketch2(p) {
     p.setup = function() {
       let can1 = p.createCanvas(50, 50);
@@ -62,9 +73,9 @@ function sketch3(p) {
        // cloud.resize(p.width, p.height);
 
         cnv = p.createCanvas(200, 200); 
-        //cnv.parent('output2'); 
+        cnv.parent('output2'); 
         // background(244, 253, 255);
-        p.background(0); 
+        p.background(255, 0, 0); 
         //cloud.resize(0, width); 
 
         // CLICKS
@@ -75,7 +86,7 @@ function sketch3(p) {
     }
 
     p.draw = function() {
-        p.background(255);  // reset background
+        p.background(255, 0, 0);  // reset background
         //drawCloud(); 
     }
 
