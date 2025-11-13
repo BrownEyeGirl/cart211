@@ -133,7 +133,7 @@ body {
     border: 1px solid #ccc;
     background-color: #f9f9f9;
     z-index: 100;
-    min-width: 200px;
+    min-width: 420px;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
   }
   
@@ -155,8 +155,12 @@ body {
   }
   
   .window-content {
+    height: 300px; 
+    width: 300px;
     padding: 10px;
   }
+
+
   
   .close-button {
     float: right;
@@ -166,5 +170,6 @@ body {
   }
   
   
-  
-  
+#chapel-window {
+    height: 600
+}

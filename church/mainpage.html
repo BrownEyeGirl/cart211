@@ -43,11 +43,13 @@
             <a id="myButton" style="background-color: rgba(216, 2, 170, 0.194);">< return</a>
             
             <div class="files">
-                <a href="sanctuary.html"><img class="file-b0" src="assets/files/file_sanctuary.png"></a>
+                <!-- <a href="sanctuary.html"><img class="file-b0" src="assets/files/file_sanctuary.png"></a>-->
                 <div id="angel-window-trigger"><img class="file-b1" src="assets/files/file_angels.png"></div>
                 <div id="god-window-trigger"><img class="file-b2" src="assets/files/file_god.png"></div>
-                <a href="prophecy.html"><img class="file-b3" src="assets/files/file_prophecy.png"></a>
-                <a href="tenets.html"><img class="file-b4" src="assets/files/file_tenets.png"></a>
+               <!-- <a href="prophecy.html"><img class="file-b3" src="assets/files/file_prophecy.png"></a>-->
+               <!-- <a href="tenets.html"><img class="file-b4" src="assets/files/file_tenets.png"></a>-->
+                <div id="chapel-window-trigger"><img class="file-b4" src="assets/files/file_chapel.png"></div>
+
             </div>
         
             <!-- HEADER -->
@@ -74,10 +76,11 @@
                     </div>
                 </div>
 
-                <div class="window" id="window3" style="top: 250px; left: 450px;">
-                    <div class="window-header">Window 3  <button class="close-button">X</button> </div>
+                <div class="window" id="chapel-window" style="top: 250px; left: 450px; height: 720px">
+                    <div class="window-header">Chapel Window<button class="close-button">X</button> </div>
                     <div class="window-content">
                         <p>This is the third draggable window.</p>
+                        <div class="canvas-popup" id="chapel-output"></div>
                     </div>
                 </div>
             </div>
@@ -88,100 +91,110 @@
             <!-- Code to make window draggable -->
             <script>
 
-                let windows = document.querySelectorAll('.window');
-let activeWindow = null;
-let maxZIndex = 10;
+            let windows = document.querySelectorAll('.window');
+            let activeWindow = null;
+            let maxZIndex = 10;
 
-windows.forEach(function(windowElem) {
-    dragElement(windowElem);
-    const closeButton = windowElem.querySelector('.close-button');
+            windows.forEach(function(windowElem) {
+                dragElement(windowElem);
+                const closeButton = windowElem.querySelector('.close-button');
 
-    // Bring window to front on click
-    windowElem.addEventListener('mousedown', function() {
-        if (activeWindow) {
-            activeWindow.classList.remove('active');
+            // Bring window to front on click
+            windowElem.addEventListener('mousedown', function() {
+                if (activeWindow) {
+                    activeWindow.classList.remove('active');
+                }
+                activeWindow = windowElem;
+                maxZIndex += 1;
+                activeWindow.style.zIndex = maxZIndex;
+                activeWindow.classList.add('active');
+            });
+
+            // Close button hides window
+            closeButton.addEventListener('click', () => {
+                windowElem.style.display = 'none';
+            });
+        });
+
+        // ---- NEW CODE: OPEN WINDOWS ON TRIGGER CLICK ----
+
+        // Assuming window elements have IDs "angel-window" and "god-window"
+        const angelWin = document.getElementById('angel-window');
+        const godWin = document.getElementById('god-window');
+        const chapelWin = document.getElementById('chapel-window');
+
+        // And triggers like: <div id="angel-window-trigger">...</div>
+        const angelTrig = document.getElementById('angel-window-trigger');
+        const godTrig = document.getElementById('god-window-trigger');
+        const chapelTrig = document.getElementById('chapel-window-trigger');
+
+
+        if (angelTrig && angelWin) {
+            angelTrig.addEventListener('click', () => {
+                angelWin.style.display = 'block';
+                bringToFront(angelWin);
+            });
         }
-        activeWindow = windowElem;
-        maxZIndex += 1;
-        activeWindow.style.zIndex = maxZIndex;
-        activeWindow.classList.add('active');
-    });
 
-    // Close button hides window
-    closeButton.addEventListener('click', () => {
-        windowElem.style.display = 'none';
-    });
-});
+        if (godTrig && godWin) {
+            godTrig.addEventListener('click', () => {
+                godWin.style.display = 'block';
+                bringToFront(godWin);
+            });
+        }
 
-// ---- NEW CODE: OPEN WINDOWS ON TRIGGER CLICK ----
+        if (chapelTrig && chapelWin) {
+            chapelTrig.addEventListener('click', () => {
+                chapelWin.style.display = 'block';
+                bringToFront(chapelWin);
+            });
+        }
 
-// Assuming window elements have IDs "angel-window" and "god-window"
-const angelWin = document.getElementById('angel-window');
-const godWin = document.getElementById('god-window');
+        // Helper function to bring window to front
+        function bringToFront(windowElem) {
+            if (activeWindow) {
+                activeWindow.classList.remove('active');
+            }
+            activeWindow = windowElem;
+            maxZIndex += 1;
+            activeWindow.style.zIndex = maxZIndex;
+            activeWindow.classList.add('active');
+        }
 
-// And triggers like: <div id="angel-window-trigger">...</div>
-const angelTrig = document.getElementById('angel-window-trigger');
-const godTrig = document.getElementById('god-window-trigger');
+        // ---- DRAGGING FUNCTION ----
+        function dragElement(elmnt) {
+            let pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+            let dragHandle = elmnt.querySelector('.window-header');
 
-if (angelTrig && angelWin) {
-    angelTrig.addEventListener('click', () => {
-        angelWin.style.display = 'block';
-        bringToFront(angelWin);
-    });
-}
+            if (dragHandle) {
+                dragHandle.onmousedown = dragMouseDown;
+            } else {
+                elmnt.onmousedown = dragMouseDown;
+            }
 
-if (godTrig && godWin) {
-    godTrig.addEventListener('click', () => {
-        godWin.style.display = 'block';
-        bringToFront(godWin);
-    });
-}
+            function dragMouseDown(e) {
+                e.preventDefault();
+                pos3 = e.clientX;
+                pos4 = e.clientY;
+                document.onmouseup = closeDragElement;
+                document.onmousemove = elementDrag;
+            }
 
-// Helper function to bring window to front
-function bringToFront(windowElem) {
-    if (activeWindow) {
-        activeWindow.classList.remove('active');
-    }
-    activeWindow = windowElem;
-    maxZIndex += 1;
-    activeWindow.style.zIndex = maxZIndex;
-    activeWindow.classList.add('active');
-}
+            function elementDrag(e) {
+                e.preventDefault();
+                pos1 = pos3 - e.clientX;
+                pos2 = pos4 - e.clientY;
+                pos3 = e.clientX;
+                pos4 = e.clientY;
+                elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+                elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+            }
 
-// ---- DRAGGING FUNCTION ----
-function dragElement(elmnt) {
-    let pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
-    let dragHandle = elmnt.querySelector('.window-header');
-
-    if (dragHandle) {
-        dragHandle.onmousedown = dragMouseDown;
-    } else {
-        elmnt.onmousedown = dragMouseDown;
-    }
-
-    function dragMouseDown(e) {
-        e.preventDefault();
-        pos3 = e.clientX;
-        pos4 = e.clientY;
-        document.onmouseup = closeDragElement;
-        document.onmousemove = elementDrag;
-    }
-
-    function elementDrag(e) {
-        e.preventDefault();
-        pos1 = pos3 - e.clientX;
-        pos2 = pos4 - e.clientY;
-        pos3 = e.clientX;
-        pos4 = e.clientY;
-        elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
-        elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
-    }
-
-    function closeDragElement() {
-        document.onmouseup = null;
-        document.onmousemove = null;
-    }
-}
+            function closeDragElement() {
+                document.onmouseup = null;
+                document.onmousemove = null;
+            }
+        }
  </script>
 </body>
 </html>

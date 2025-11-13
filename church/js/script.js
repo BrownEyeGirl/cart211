@@ -1,5 +1,6 @@
 
 
+
 // Setup function for the instance
 let mySketch = function(p) {
     let video; 
@@ -134,8 +135,128 @@ function sketch3(p) {
 }
 
 
+function sketchChapel(p) {
 
-  
+    let img;
+    let colours = ['white', 'white', 'lightblue']; 
+    let colour; 
+    let x = 0; 
+    let y = 0; 
+
+
+    p.setup = function() {
+        img = p.loadImage('assets/churchwindows.png'); // Example image URL
+        
+        let cnv = p.createCanvas(400, 600);
+        
+        cnv.parent('chapel-output');
+    };
+
+    p.draw = function() {
+        p.background(255);
+        p.generateStatic();
+        img.resize(400, 0);
+        p.image(img, 0, 0); // Display and scale to canvas size
+        
+    };
+
+    p.generateStatic = function() {
+        //p.fill(0);
+       // p.rect(10, 10, 30, 10);
+
+       for(let row = 0; row < p.width; row+=10) { //=p.map(p.mouseY, 0, p.windowHeight, 2, 20)) {
+            for(let col = 0; col < p.height; col+=10) { // col+=p.map(p.mouseY, 0, p.windowHeight, 2, 20)) {
+               // x = row; 
+               // y = col; 
+                
+                p.noStroke(); 
+                //colour = colours[2]; 
+                p.fill(colours[p.int(p.random(0, colours.length))]); 
+                
+               p.rect(row, col, 10+(p.mouseX%100)%10, 10+(p.mouseY%100)%10);
+                //p.rect(row, col, p.map(p.mouseX, 0, p.windowWidth, 2, 20), map(p.mouseY, 0, p.windowHeight, 2, 20))
+            
+            }
+        }
+
+    }
+};
+/** 
+ * Chapel Interface 
+ * Skyla Trousdale 
+ * 
+ * Interactive static. 
+ */
+
+/*
+
+    let colours = ['#D6D6D6', '#ADADAD', '#C4C4C4']; 
+    let colour; 
+    let x = 0; 
+    let y = 0; 
+
+    let chapel; 
+
+    p.preload = function() {
+        chapel = p.loadImage('assets/churchwindows.png');
+        chapel.show(); 
+        //chapel.resize(0, 300);
+    }
+
+    p.setup = function() {
+        //chapel = p.loadImage('assets/churchwindows.png');
+        chapel.resize(0, 400);
+        
+        let cnv = p.createCanvas(chapel.width, chapel.height); 
+        cnv.parent('chapel-output');
+       // p.background(0);
+        //generateStatic(); 
+    }
+
+    p.draw = function() {
+        //generateStatic(); 
+        //p.frameRate(20);
+
+        push(); 
+        chapel.resize(0, 200)
+        p.image(chapel, 0, 0); 
+        //filter(p.INVERT);
+        pop(); 
+
+    } 
+
+    function generateStatic() {
+        for(let row = 0; row < p.width; row+=p.map(p.mouseY, 0, p.windowHeight, 2, 20)) {
+            for(let col = 0; col < p.height; col+=p.map(p.mouseY, 0, p.windowHeight, 2, 20)) {
+                x = row; 
+                y = col; 
+                
+                noStroke(); 
+                colour = colours[2]; 
+                p.fill(colours[int(p.random(0, colours.length))]); 
+                p.rect(x, y, p.map(p.mouseX, 0, p.windowWidth, 2, 20), map(p.mouseY, 0, p.windowHeight, 2, 20))
+            
+                }
+        }
+
+    }
+
+    /* Moves with resize window to remain centered */
+   /* function windowResized() {
+        newCanvasX = (windowWidth)/2;
+        newCanvasY = (windowHeight)/2;
+        cnv.position(newCanvasX,newCanvasY)
+    }*/
+
+
+
+
+
+
+
+
+//let chapelP5 = new p5(sketchChapel);
+ // new p5(sketchChapel);
 
 
 
@@ -144,7 +265,8 @@ function sketch3(p) {
 
 
     // Create new p5 instances for each sketch
+    //new p5(sketch1);
     new p5(sketch3);
-    new p5(sketch1);
+    new p5(sketchChapel); 
     new p5(sketch2);
   
