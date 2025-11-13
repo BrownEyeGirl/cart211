@@ -38,20 +38,70 @@ let mySketch = function(p) {
 
 
 
-// Test Canvas
+/* APPLE */
 function sketch2(p) {
+    let appleLogo;
+    let x, y;       // Position
+    let xSpeed, ySpeed; // Speed and direction
+    let gardenImg; 
+    let enterButton;
+    
+    p.preload= function() {
+      // Load your image — make sure this file is in your project folder or use a URL
+      appleLogo = p.loadImage('assets/sanctuary/red_apple.png');
+      gardenImg = p.loadImage('assets/sanctuary/garden.jpg');
+
+    }
+    
     p.setup = function() {
-      let can1 = p.createCanvas(50, 50);
-      //can1.parent('output');
-      can1.center(); 
-      p.background(220);
-    };
-  
+      let canva2 = p.createCanvas(400, 400);
+      canva2.parent('apple-output');
+      
+      // Start position and random speed
+      x = p.random(p.width - 100);
+      y = p.random(p.height - 100);
+      xSpeed = 5;
+      ySpeed = 4;
+      appleLogo.resize(60, 0);
+      p.background(0);
+      
+      enterButton = p.select('#enterButton');
+      enterButton.mousePressed(p.eaten);
+
+    // Assign a function to run when clicked
+   // enterButton.mousePressed(p.eaten);
+
+
+
+    }
+    
     p.draw = function() {
-      p.ellipse(p.mouseX, p.mouseY, 20, 20);
-    };
+      //p.eaten(); 
+    }
 
-
+    p.eaten = function() {
+        
+            p.background(0);
+            gardenImg.resize(0, p.width);
+            p.image(gardenImg, 0, 0);
+            
+            // Draw the image
+            
+            p.image(appleLogo, x, y);
+            
+            // Move the logo
+            x += xSpeed;
+            y += ySpeed;
+            
+            // Bounce off edges
+            if (x <= 0 || x + appleLogo.width >= p.width) {
+                xSpeed *= -1;
+            }
+            if (y <= 0 || y + appleLogo.height >= p.height) {
+                ySpeed *= -1;
+            }
+        
+    }
   }
   
 
@@ -84,7 +134,7 @@ function sketch3(p) {
         cloud = p.loadImage('assets/god/god3.png'); 
         cloud.resize(p.width, p.height);
 
-        cnv = p.createCanvas(400, 400); 
+        let cnv = p.createCanvas(400, 400); 
         cnv.parent('god-output'); 
 
         // background(244, 253, 255);

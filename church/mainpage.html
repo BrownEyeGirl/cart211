@@ -30,7 +30,7 @@
 </head>
 
 <body>
-    <div id="my-canvas">hiiiii</div>
+    <div id="my-canvas"></div>
    
     
     <!-- FILES -->
@@ -58,15 +58,16 @@
 
             <!-- POPUP HANDLERS -->
         
-                <!--<div class="window" id="angel-window" style="top: 50px; left: 50px;">
+                <div class="window" id="angel-window" style="top: 50px; left: 50px;">
                     <div class="window-header" >Angel Window<button class="close-button">X</button> </div>
                     
                     <div class="window-content">
                         <p>This is the first draggable window.</p>
-                        <div id="output"></div>
+                        <button id="enterButton">hi</button>
+                        <div id="apple-output"></div>
                     </div>
                     
-                </div> -->
+                </div> 
 
                 <div class="window" id="god-window" style="top: 150px; left: 250px; height: 510px">
                     <div class="window-header">God Window<button class="close-button">X</button> </div>
@@ -91,11 +92,13 @@
             <!-- Code to make window draggable -->
             <script>
 
+
             let windows = document.querySelectorAll('.window');
             let activeWindow = null;
             let maxZIndex = 10;
 
             windows.forEach(function(windowElem) {
+                windowElem.style.display = 'none';
                 dragElement(windowElem);
                 const closeButton = windowElem.querySelector('.close-button');
 
