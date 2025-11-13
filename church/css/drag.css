@@ -130,15 +130,16 @@ body {
 
   .window {
     position: absolute;
-    border: 1px solid #ccc;
-    background-color: #f9f9f9;
+    border: 1px solid #00c3ff;
+    background-color: #d7f8ff;
     z-index: 100;
     min-width: 420px;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
   }
   
   .window-header {
-    background-color: #eee;
+    background-color: white;
+    color: black;
     padding: 5px;
     cursor: move;
     display: flex;
@@ -151,7 +152,7 @@ body {
     border: none;
     font-size: 1.2em;
     cursor: pointer;
-    color: #333;
+    color: #e43e80;
   }
   
   .window-content {
@@ -179,4 +180,29 @@ body {
     background-color: black;
     height: 50px;
     width: 150px;
+}
+
+/* AESTHETICS */
+
+p {
+    font-family: "VT323", monospace;
+    font-weight: 400;
+    font-size: 18px; 
+    word-spacing: 3px; 
+    font-style: normal;
+    color: rgb(0, 0, 0); 
+    text-shadow:
+      0 0 5px rgb(0, 41, 63), /* Smaller, sharper glow */
+      0 0 10px rgb(38, 179, 255), /* Medium glow */
+      0 0 20px rgb(38, 179, 255), /* Larger, softer glow */
+      0 0 40px rgb(194, 234, 255); /* Even larger, softer glow */
+}
+
+h1 {
+    font-family: "VT323", monospace;
+    font-weight: 400;
+    font-size: 30px; 
+    word-spacing: 3px; 
+    font-style: normal;
+    color: rgb(255, 255, 255); 
 }
