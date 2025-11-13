@@ -63,76 +63,95 @@ function sketch2(p) {
 
   /* GOD */ 
 function sketch3(p) {
-    
+    // elements
+    let arrow; 
+    let cloud;
+    let confess;
+    let factor;  
+
+    let click = {
+        x: 0, 
+        y: 0,
+        strength: 255
+    }
+
 
     p.setup = function() {
 
         // Load images 
-       // arrow = p.loadImage('assets/god/cursor3.png');
-        //arrow.resize(7, 0);
-        //cloud = p.loadImage('assets/god/god3.png'); 
-       // cloud.resize(p.width, p.height);
+        arrow = p.loadImage('assets/god/cursor3.png');
+       // arrow.resize(10, 0);
+        cloud = p.loadImage('assets/god/god3.png'); 
+        cloud.resize(p.width, p.height);
 
-        cnv = p.createCanvas(200, 200); 
-        cnv.parent('output2'); 
+        cnv = p.createCanvas(400, 400); 
+        cnv.parent('god-output'); 
+
         // background(244, 253, 255);
-        p.background(255, 0, 0); 
+       // p.background(0); 
         //cloud.resize(0, width); 
 
         // CLICKS
-       // confess=p.loadImage('assets/god/confess2.png'); 
+       confess = p.loadImage('assets/god/confess.png'); 
        // clickCount = 0; 
-        //factor = 50; 
+        factor = 50; 
+        p.drawCloud();
 
     }
 
     p.draw = function() {
-        p.background(255, 0, 0);  // reset background
-        //drawCloud(); 
+        //p.background(255);  // reset background
+        //p.rect(10, 10, 20, 20);
+        //p.image(arrow, 10, 10);
+        //p.drawCloud(); 
     }
 
-    /*
-    mouseClicked() = function() {
-        clickCount++; 
-        click.x = mouseX; 
-        click.y = mouseY; 
+    
+    p.mouseClicked = function() {
+        //clickCount++; 
+        click.x = p.mouseX; 
+        click.y = p.mouseY; 
         click.strength = 255; 
+        p.background(255)
+        p.drawCloud(); 
 
-        if(factor > 8) {
+         if(factor > 8) {
             factor-=1; 
-        }
+         }
         
-    }
-
-    function drawCloud() {
+    } 
+ 
+    p.drawCloud = function() {
         // sets x and y at new click clickcount
         //factor = int(random(10, 20));
-        let vibrate = int(random(1, 3)); 
-        cloud.resize(width, height);
+       // let vibrate = p.int(p.random(1, 3)); 
+        cloud.resize(p.width, p.height);
+        confess.resize(100, 0);
 
-        for(let xC = 0; xC < width; xC += factor) {
-            for(let yC = 0; yC < height; yC += factor) {
+        for(let xC = 0; xC < 400; xC+=factor) {
+            for(let yC = 0; yC < 400; yC+=factor) {
                 // turn the cloud greyscale
                 sq = cloud.get(xC, yC); // gets colour at x,y. returns array [R, G, B, A] but since the image is black and white 
                 grayVal = (0.299 * sq[0]) + (0.587 * sq[1]) + (0.114 * sq[2]) // FORMULA WRITTEN BY CHATGPT, accounts for human perception of light to take RGB and turn it grayscale
                 grayVal = p.map(grayVal, 0, 200, 255, 0);
                 p.tint(255, grayVal);
-                vibrate = int(random(1, 3)); 
-                p.image(arrow, xC+vibrate, yC+vibrate); //int(rantom(xC, xC+5)), yC);
+                //vibrate = p.int(p.random(1, 3)); 
+                p.image(arrow, xC, yC); //int(rantom(xC, xC+5)), yC);
+                //p.rect(10, 10, 20, 20);
                 //frameRate(10);
 
                 // CONFESS
-                tint(255, click.strength); 
-                confess.resize(150, 0);
-                image(confess, click.x-confess.width/2, click.y-confess.height/2); 
-                if(click.strength > 0) {
-                    click.strength -=0; 
-                } 
+                p.tint(255, click.strength); 
+                
+                p.image(confess, click.x-confess.width/2, click.y-confess.height/2); 
 
             }
         }
-    }*/
+    }
 }
+
+
+
 
 
 function sketchChapel(p) {
