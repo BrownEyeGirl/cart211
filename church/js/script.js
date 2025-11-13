@@ -15,10 +15,11 @@ let mySketch = function(p) {
     
       // Draw function for the instance
       p.draw = function() {
-        p.background(220); // Set the background color (grayscale value 220)
+        p.background(255); // Set the background color (grayscale value 220)
         // You can also use RGB values: p.background(255, 0, 0); for red
         // Or a CSS color string: p.background("#FF00FF"); for magenta
          // Display the video just like an image! 
+        p.tint(255, 150); 
         p.image(video,0,0,p.width,p.height);
         p.filter(p.INVERT);//will make you a GHOST
         p.filter(p.GRAY);
