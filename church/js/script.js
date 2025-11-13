@@ -45,11 +45,14 @@ function sketch2(p) {
     let xSpeed, ySpeed; // Speed and direction
     let gardenImg; 
     let enterButton;
+    let gateImg; 
+    let eaten = false; 
     
     p.preload= function() {
       // Load your image — make sure this file is in your project folder or use a URL
       appleLogo = p.loadImage('assets/sanctuary/red_apple.png');
       gardenImg = p.loadImage('assets/sanctuary/garden.jpg');
+      gateImg = p.loadImage('assets/sanctuary/sensitive-content.png');
 
     }
     
@@ -64,9 +67,16 @@ function sketch2(p) {
       ySpeed = 4;
       appleLogo.resize(60, 0);
       p.background(0);
+      gateImg.resize(p.width, 0);
+      p.image(gateImg, 0, 0);
       
       enterButton = p.select('#enterButton');
-      enterButton.mousePressed(p.eaten);
+      enterButton.position(p.width/2-65, p.height/2+130);
+
+      enterButton.mousePressed(() => {
+        enterButton.hide(); 
+        eaten=true; 
+       });
 
     // Assign a function to run when clicked
    // enterButton.mousePressed(p.eaten);
@@ -76,7 +86,9 @@ function sketch2(p) {
     }
     
     p.draw = function() {
-      //p.eaten(); 
+      if(eaten) {
+        p.eaten();
+      }
     }
 
     p.eaten = function() {
@@ -86,7 +98,6 @@ function sketch2(p) {
             p.image(gardenImg, 0, 0);
             
             // Draw the image
-            
             p.image(appleLogo, x, y);
             
             // Move the logo
