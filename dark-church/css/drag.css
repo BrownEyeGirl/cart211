@@ -206,3 +206,50 @@ h1 {
     font-style: normal;
     color: rgb(255, 255, 255); 
 }
+
+
+
+ /* Handle if its a phone */
+
+ @media only screen and (max-width: 800px) {
+  body {
+    /* Change background color for small screens */
+    background-color: lightblue;
+  }
+
+  #overlay-content h1 {
+    color: pink; /*rgb(50, 154, 251);  color: rgb(157, 217, 255);  */
+    font-size: 50px; 
+    font-family: "Ballet", cursive;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    
+    text-shadow:
+      0 0 5px rgb(154, 221, 255), /* Smaller, sharper glow */
+      0 0 10px rgb(135, 213, 255), /* Medium glow */
+      0 0 20px rgb(206, 228, 240), /* Larger, softer glow */
+      0 0 40px rgb(165, 224, 255); /* Even larger, softer glow */
+
+   
+  }
+
+  /* base css code from the internet, how to overlay a div on a p5 canvas */ 
+  #overlay-content {
+    position: absolute;
+    height: 100vh; /* Body is the height of the viewport */
+    width: 100vh; /* Body is the width of the viewport */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center the overlay */
+    z-index: 2; /* Place overlay above canvas */
+    padding: 0px;
+    border-radius: 10px;
+    text-align: center;
+
+
+  }
+
+
+
+}

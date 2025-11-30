@@ -8,12 +8,12 @@ body {
     align-content: center;
     height: 100vh; /* Body is the height of the viewport */
     overflow: hidden; /* Hide anything that goes off the window size */
-    background-color: rgb(255, 255, 255);
+    background-color: black;
     background-size: 100% auto; /* 100% width, auto height */
 }
 
 .main-contents {
-    background-color: rgb(244, 253, 255); 
+    background-color: black; 
     padding: 100px; 
 }
 
@@ -60,7 +60,7 @@ body {
     line-height: 2; 
 
     /* GLOW */ 
-    color: rgb(0, 0, 0); 
+    color: white; 
     text-shadow:
       0 0 5px rgb(0, 41, 63), /* Smaller, sharper glow */
       0 0 10px rgb(38, 179, 255), /* Medium glow */
@@ -71,54 +71,54 @@ body {
 
 /* Tenets Hover */ 
 .t1:hover {
-    color: white;
+    color: black;
     text-shadow: none; 
     text-decoration: underline;
 }
 
 .t2:hover {
-    color: white;
+    color: black;
     text-shadow: none; 
     text-decoration: underline;
 }
 
 .t3:hover {
-    color: white;
+    color: black;
     text-shadow: none; 
     text-decoration: underline;
 }
 .t4:hover {
-    color: white;
+    color: black;
     text-shadow: none; 
     text-decoration: underline;
 }
 .t5:hover {
-    color: white;
+    color: black;
     text-shadow: none; 
     text-decoration: underline;
 }
 .t6:hover {
-    color: white;
+    color: black;
     text-shadow: none; 
     text-decoration: underline;
 }
 .t7:hover {
-    color: white;
+    color: black;
     text-shadow: none; 
     text-decoration: underline;
 }
 .t8:hover {
-    color: white;
+    color: black;
     text-shadow: none; 
     text-decoration: underline;
 }
 .t9:hover {
-    color: white;
+    color: black;
     text-shadow: none; 
     text-decoration: underline;
 }
 .t10:hover {
-    color: white;
+    color: black;
     text-shadow: none; 
     text-decoration: underline;
 }

@@ -1,6 +1,6 @@
 
 body {
-  background-color: white;
+  background-color: black;
   /*background-image: url('https://i.pinimg.com/originals/c7/d2/9f/c7d29f06ce5087d5317ea9b6ce2e8f8f.gif');
  background-size: 100% auto; /* 100% width, auto height */
 }
@@ -39,7 +39,7 @@ h1 {
     display: fixed;
     justify-content: center;
     align-items: center;
-    background-color: rgb(244, 253, 255);
+    background-color: black;
     padding: 100px;
   }
 
@@ -79,7 +79,7 @@ h1 {
     font-size: 20px; 
     word-spacing: 3px; 
     font-style: normal;
-    color: rgb(0, 0, 0); 
+    color: white; 
     text-shadow:
       0 0 5px rgb(0, 41, 63), /* Smaller, sharper glow */
       0 0 10px rgb(38, 179, 255), /* Medium glow */
