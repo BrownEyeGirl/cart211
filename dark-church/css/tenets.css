@@ -1,0 +1,176 @@
+
+
+body {
+    padding: 0;
+    margin: 0;
+    display: grid; /* Set up the grid and justify/align to center */
+    justify-content: center;
+    align-content: center;
+    height: 100vh; /* Body is the height of the viewport */
+    overflow: hidden; /* Hide anything that goes off the window size */
+    background-color: rgb(255, 255, 255);
+    background-size: 100% auto; /* 100% width, auto height */
+}
+
+.main-contents {
+    background-color: rgb(244, 253, 255); 
+    padding: 100px; 
+}
+
+
+.deco-txt h1 {
+    font-family: "VT323", monospace;
+    font-size: 20px; 
+    font-style: normal;
+    color: blue; 
+    line-height: 2; 
+}
+
+.main-txt {
+    font-family: "Ballet", cursive;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-size: 140px; 
+    font-style: normal;
+
+    position: absolute;
+      bottom: 3%; /* Vertically center the rotated h1 */
+      right: 55%; /* Position it on the left side of the page */
+      transform: translateY(-50%) rotate(-90deg); /* Adjust vertical position and rotate */
+      transform-origin: center;
+      white-space: nowrap;
+    order: 0;
+  
+    color: rgb(157, 217, 255); 
+    text-shadow:
+      0 0 5px rgb(154, 221, 255), /* Smaller, sharper glow */
+      0 0 10px rgb(135, 213, 255), /* Medium glow */
+      0 0 20px rgb(206, 228, 240), /* Larger, softer glow */
+      0 0 40px rgb(165, 224, 255); /* Even larger, softer glow */
+      
+}
+
+.tenet-txt {
+    font-family: "VT323", monospace;
+    font-weight: 400;
+    font-size: 20px; 
+    text-decoration: underline;
+    font-style: normal;
+    color: black; 
+    line-height: 2; 
+
+    /* GLOW */ 
+    color: rgb(0, 0, 0); 
+    text-shadow:
+      0 0 5px rgb(0, 41, 63), /* Smaller, sharper glow */
+      0 0 10px rgb(38, 179, 255), /* Medium glow */
+      0 0 20px rgb(38, 179, 255), /* Larger, softer glow */
+      0 0 40px rgb(194, 234, 255); /* Even larger, softer glow */
+      
+}
+
+/* Tenets Hover */ 
+.t1:hover {
+    color: white;
+    text-shadow: none; 
+    text-decoration: underline;
+}
+
+.t2:hover {
+    color: white;
+    text-shadow: none; 
+    text-decoration: underline;
+}
+
+.t3:hover {
+    color: white;
+    text-shadow: none; 
+    text-decoration: underline;
+}
+.t4:hover {
+    color: white;
+    text-shadow: none; 
+    text-decoration: underline;
+}
+.t5:hover {
+    color: white;
+    text-shadow: none; 
+    text-decoration: underline;
+}
+.t6:hover {
+    color: white;
+    text-shadow: none; 
+    text-decoration: underline;
+}
+.t7:hover {
+    color: white;
+    text-shadow: none; 
+    text-decoration: underline;
+}
+.t8:hover {
+    color: white;
+    text-shadow: none; 
+    text-decoration: underline;
+}
+.t9:hover {
+    color: white;
+    text-shadow: none; 
+    text-decoration: underline;
+}
+.t10:hover {
+    color: white;
+    text-shadow: none; 
+    text-decoration: underline;
+}
+
+
+.click-here {
+    animation: blink 1.2s infinite; /* Apply the blink animation */
+    font-family: "VT323", monospace;
+    font-weight: 400;
+    font-size: 15px; 
+    font-style: normal;
+    color: blue; 
+
+}
+    
+@keyframes blink {
+    0% {
+        opacity: 0; /* Start completely transparent */
+    }
+    50% {
+        opacity: 1; /* Fully visible at 50% through the animation */
+        color: rgb(44, 157, 255); 
+    }
+    100% {
+        opacity: 0; /* Back to transparent at the end */
+        color: blue; 
+    }
+}
+
+mark {
+    background-color: blue; /* Change highlight color */
+    color: white; /* Change text color */
+    padding: 2px 5px; /* Add some padding */
+    border-radius: 3px; /* Slightly rounded corners */
+}
+
+.agreed-txt {
+    font-family: "VT323", monospace;
+    font-weight: 400;
+    font-size: 20px; 
+    text-decoration: underline;
+    font-style: normal;
+    color: black; 
+    line-height: 2; 
+
+    /* GLOW */ 
+    color: rgb(0, 0, 0); 
+    text-shadow:
+      0 0 5px rgb(0, 41, 63), /* Smaller, sharper glow */
+      0 0 10px rgb(38, 179, 255), /* Medium glow */
+      0 0 20px rgb(38, 179, 255), /* Larger, softer glow */
+      0 0 40px rgb(194, 234, 255); /* Even larger, softer glow */
+      
+}
+
