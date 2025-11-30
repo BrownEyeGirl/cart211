@@ -265,38 +265,13 @@ h1 {
    .files {
     display: flex; 
     flex-wrap: wrap; 
+    align-items: center;
+    min-width: 0; /* Prevents overflow when content is too large */
+    overflow: auto; /* Adds scrollbar if content exceeds frame */
+    justify-content: center;
+    /* Ensure the container has a defined height, e.g., to fill the screen */
+     height: 100vh;
   }
-
-
-  .file-b0 {
-    padding: 60px; 
-    width: 60px; 
-  }
-  
-  .file-b1 {
-    width: 60px;
-    top: 50%; 
-    padding: 50px;
-  }
-  
-  .file-b2 {
-    width: 60px;
-    top: 80%; 
-    padding: 20px;
-  }
-  
-  .file-b3 {
-    width: 60px;
-    top: 80%; 
-    padding: 20px;
-  }
-  
-  .file-b4 {
-    width: 60px;
-    top: 80%; 
-    padding: 20px;
-  }
-
 
 
 }
