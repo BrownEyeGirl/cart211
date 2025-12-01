@@ -139,6 +139,14 @@ body {
     padding: 20px;
   }
 
+  .file-esc {
+    position: absolute;
+    width: 80px;
+    margin-top: 40%; 
+    margin-right: 40%; 
+    padding: 20px;
+  }
+
 
   /* DRAGGABLE POPUP */ 
 
