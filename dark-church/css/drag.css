@@ -73,19 +73,19 @@ body {
   }
 
   #overlay-content h1 {
-    color: rgb(50, 154, 251); 
+    color: white; 
     font-size: 100px; 
     font-family: "Ballet", cursive;
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
 
-    color: rgb(157, 217, 255); 
+   
     text-shadow:
-      0 0 5px rgb(154, 221, 255), /* Smaller, sharper glow */
-      0 0 10px rgb(135, 213, 255), /* Medium glow */
-      0 0 20px rgb(206, 228, 240), /* Larger, softer glow */
-      0 0 40px rgb(165, 224, 255); /* Even larger, softer glow */
+      0 0 5px rgb(255, 255, 255), /* Smaller, sharper glow */
+      0 0 10px rgb(0, 0, 0), /* Medium glow */
+      0 0 20px rgb(116, 116, 116), /* Larger, softer glow */
+      0 0 40px rgb(253, 254, 255); /* Even larger, softer glow */
       
   }
   
@@ -204,7 +204,7 @@ h1 {
     font-size: 30px; 
     word-spacing: 3px; 
     font-style: normal;
-    color: rgb(255, 255, 255); 
+    color: black; 
 }
 
 
