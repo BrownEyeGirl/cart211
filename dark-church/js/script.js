@@ -54,7 +54,7 @@ function sketch2(p) {
       appleLogo = p.loadImage('assets/sanctuary/red_apple.png');
       gardenImg = p.loadImage('assets/sanctuary/garden.jpg');
       gateImg = p.loadImage('assets/sanctuary/sensitive-content.png');
-
+      
     }
     
     p.setup = function() {
@@ -70,6 +70,7 @@ function sketch2(p) {
       p.background(0);
       gateImg.resize(p.width, 0);
       p.image(gateImg, 0, 0);
+
       
       enterButton = p.select('#enterButton');
       enterButton.position(p.width/2-65, p.height/2+130);
@@ -358,8 +359,8 @@ function sketchLight(p) {
     let h; 
     let w; 
 
-    let r1 = 150;
-    let r2 = 300;
+    let r1 = 100;
+    let r2 = 200;
     let n = 150;
 
     let col = {
@@ -373,7 +374,7 @@ function sketchLight(p) {
         h = 400; 
         let cnv = p.createCanvas(w, h);
         cnv.parent('light-output'); 
-        p.background(255);
+        p.background(55);
 
     }
 
@@ -386,13 +387,13 @@ function sketchLight(p) {
 
 
     p.radialLines = function() {
-        p.background(0, 0, 0);
-        p.translate(width/2, height/2);
+        p.background(0);
+        p.translate(w/2, h/2);
         
         for (let i = 0; i < n; i += 1) {
 
-            let x2 = (r2)*cos(i*2*3.14/n); // GOOGLE HELPED ME WITH THIS MATH !!! 
-            let y2 = (r2)*sin(i*2*3.14/n);
+            let x2 = (r2)*p.cos(i*2*3.14/n); // GOOGLE HELPED ME WITH THIS MATH !!! 
+            let y2 = (r2)*p.sin(i*2*3.14/n);
             
             p.noFill();
             p.strokeWeight(p.random(1, 4));

@@ -94,6 +94,14 @@ body {
   }
 
 
+
+  .file-black {
+
+  }
+
+  .file-white {
+
+  }
   .file-b0 {
     padding: 60px; 
     width: 60px; 
@@ -137,7 +145,7 @@ body {
   .window {
     position: absolute;
     border: 2px solid #ffffff;
-    background-color: #000000;
+    
     z-index: 100;
     min-width: 420px;
     box-shadow: 2px 2px 5px rgba(255, 255, 255, 0.2);
@@ -199,8 +207,8 @@ p {
     color: rgb(0, 0, 0); 
     text-shadow:
       0 0 5px rgb(0, 41, 63), /* Smaller, sharper glow */
-      0 0 10px rgb(38, 179, 255), /* Medium glow */
-      0 0 20px rgb(38, 179, 255), /* Larger, softer glow */
+      0 0 10px rgb(116, 116, 116), /* Medium glow */
+      0 0 20px rgb(227, 227, 227), /* Larger, softer glow */
       0 0 40px rgb(194, 234, 255); /* Even larger, softer glow */
 }
 
@@ -232,10 +240,10 @@ h1 {
     font-style: normal;
     
     text-shadow:
-      0 0 5px rgb(154, 221, 255), /* Smaller, sharper glow */
-      0 0 10px rgb(135, 213, 255), /* Medium glow */
-      0 0 20px rgb(206, 228, 240), /* Larger, softer glow */
-      0 0 40px rgb(165, 224, 255); /* Even larger, softer glow */
+      0 0 5px rgb(170, 170, 170), /* Smaller, sharper glow */
+      0 0 10px rgb(177, 178, 179), /* Medium glow */
+      0 0 20px rgb(103, 103, 103), /* Larger, softer glow */
+      0 0 40px rgb(65, 65, 65); /* Even larger, softer glow */
 
    
   }
