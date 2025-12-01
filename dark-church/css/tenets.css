@@ -10,10 +10,19 @@ body {
     overflow: hidden; /* Hide anything that goes off the window size */
     background-color: black;
     background-size: 100% auto; /* 100% width, auto height */
+    
+}
+
+.jesus-ascii {
+    float: right;
+    margin-left: 50%; 
+    background-image: url('assets/jesusascii.png');
+    z-index: -1;
+    display:block;
+    position: absolute;
 }
 
 .main-contents {
-    background-color: black; 
     padding: 100px; 
 }
 
@@ -22,7 +31,7 @@ body {
     font-family: "VT323", monospace;
     font-size: 20px; 
     font-style: normal;
-    color: blue; 
+    color: rgb(255, 255, 255); 
     line-height: 2; 
 }
 
@@ -41,12 +50,12 @@ body {
       white-space: nowrap;
     order: 0;
   
-    color: rgb(157, 217, 255); 
+    color: rgb(144, 144, 144); 
     text-shadow:
-      0 0 5px rgb(154, 221, 255), /* Smaller, sharper glow */
-      0 0 10px rgb(135, 213, 255), /* Medium glow */
-      0 0 20px rgb(206, 228, 240), /* Larger, softer glow */
-      0 0 40px rgb(165, 224, 255); /* Even larger, softer glow */
+      0 0 5px rgb(104, 104, 104), /* Smaller, sharper glow */
+      0 0 10px rgb(115, 115, 115), /* Medium glow */
+      0 0 20px rgb(88, 88, 88), /* Larger, softer glow */
+      0 0 40px rgb(58, 58, 58); /* Even larger, softer glow */
       
 }
 
@@ -62,10 +71,11 @@ body {
     /* GLOW */ 
     color: white; 
     text-shadow:
-      0 0 5px rgb(0, 41, 63), /* Smaller, sharper glow */
-      0 0 10px rgb(38, 179, 255), /* Medium glow */
-      0 0 20px rgb(38, 179, 255), /* Larger, softer glow */
-      0 0 40px rgb(194, 234, 255); /* Even larger, softer glow */
+      0 0 5px rgb(228, 228, 228), /* Smaller, sharper glow */
+      0 0 10px rgb(178, 178, 178), /* Medium glow */
+      0 0 20px rgb(78, 78, 78), /* Larger, softer glow */
+      0 0 40px rgb(35, 35, 35); /* Even larger, softer glow */
+
       
 }
 
@@ -130,7 +140,7 @@ body {
     font-weight: 400;
     font-size: 15px; 
     font-style: normal;
-    color: blue; 
+    color: rgb(146, 146, 146); 
 
 }
     
@@ -140,16 +150,16 @@ body {
     }
     50% {
         opacity: 1; /* Fully visible at 50% through the animation */
-        color: rgb(44, 157, 255); 
+        color: rgb(146, 146, 146); 
     }
     100% {
         opacity: 0; /* Back to transparent at the end */
-        color: blue; 
+        color: rgb(27, 27, 27); 
     }
 }
 
 mark {
-    background-color: blue; /* Change highlight color */
+    background-color: rgb(255, 0, 179); /* Change highlight color */
     color: white; /* Change text color */
     padding: 2px 5px; /* Add some padding */
     border-radius: 3px; /* Slightly rounded corners */
@@ -158,19 +168,57 @@ mark {
 .agreed-txt {
     font-family: "VT323", monospace;
     font-weight: 400;
-    font-size: 20px; 
-    text-decoration: underline;
+    font-size: 140px; 
     font-style: normal;
-    color: black; 
+    color: white; 
     line-height: 2; 
-
+    animation: blink 1.2s infinite; /* Apply the blink animation */
     /* GLOW */ 
     color: rgb(0, 0, 0); 
     text-shadow:
       0 0 5px rgb(0, 41, 63), /* Smaller, sharper glow */
-      0 0 10px rgb(38, 179, 255), /* Medium glow */
-      0 0 20px rgb(38, 179, 255), /* Larger, softer glow */
-      0 0 40px rgb(194, 234, 255); /* Even larger, softer glow */
+      0 0 10px rgb(66, 66, 66), /* Medium glow */
+      0 0 20px rgb(120, 120, 120), /* Larger, softer glow */
+      0 0 40px rgb(226, 226, 226); /* Even larger, softer glow */
       
 }
 
+
+
+
+/* Commiting page */
+#contentContainer {
+    position: fixed;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: white; /* white background */
+    background-image: url('https://i.pinimg.com/originals/fe/7a/ae/fe7aaefe62ce173b724b99280d1c8708.gif');
+    color: rgb(12, 12, 12);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center; 
+    z-index: 100; /* Ensure it is on top of everything */
+    opacity: 1;
+    transition: opacity 0.5s ease-out; /* Add a fade transition */
+}
+
+/* Style the main content, hidden by default */
+#siteContent {
+    padding: 20px;
+}
+
+/* Class to hide elements */
+.hidden {
+    display: none !important;
+}
+
+/* Class to fade out the overlay before hiding */
+.fade-out {
+    opacity: 0 !important;
+}

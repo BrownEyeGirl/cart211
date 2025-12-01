@@ -31,7 +31,11 @@
 
 
 <body>
-  <div class="main-contents">
+  <div id="contentContainer" style="display: none;" style="background-color: white;">
+    <h1 class="agreed-txt"> Thank you for committing... </h1>
+  </div>
+  <img class="jesus-ascii" src="assets/jesusascii.png">
+  <div class="main-contents" id="mainContents">
     <!--<h1 class="deco-txt">&lt;Terms & Conditions&gt;</h1>-->
     
     <h1 class="main-txt">&lt;Tenets&gt;</h1>
@@ -48,22 +52,30 @@
     <p class="t10">X. All shall be quantified and judged. <br>
     </p>
   </div>
+  
    <input type="checkbox" id="myCheckbox">
 <label for="myCheckbox" class="click-here">Agree to Terms and Conditions </label>
 
-<div id="contentContainer" style="display: none;"> <!-- Loads AFTER terms and conditions are agreed to. Displayed for timeout before loading next page -->
+
+<div id="" style="display: none;"> <!-- Loads AFTER terms and conditions are agreed to. Displayed for timeout before loading next page -->
   <p class="agreed-txt"> Thank you for committing.. </p>
 </div>
 </div>
+
 <script>
+
     document.addEventListener('DOMContentLoaded', function() {
       const checkbox = document.getElementById('myCheckbox');
       const contentContainer = document.getElementById('contentContainer');
+      const siteContent = document.getElementById('mainContents');
 
       // Function to handle content display
       function handleCheckboxChange() {
         if (checkbox.checked) {
           contentContainer.style.display = 'block'; // Show the content})
+         // contentContainer.classList.add('fade-out');
+          //contentContainer.classList.remove('hidden');
+          siteContent.classList.add('hidden');
           setTimeout(function() { 
             window.location.href = 'about.html';}, 3000);
           
@@ -78,6 +90,10 @@
       // Call the function initially to set the correct state on page load
       handleCheckboxChange();
     });
+    
+
+ 
+
 
 </script>
 

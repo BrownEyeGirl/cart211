@@ -1,8 +1,7 @@
 
 body {
   background-color: black;
-  /*background-image: url('https://i.pinimg.com/originals/c7/d2/9f/c7d29f06ce5087d5317ea9b6ce2e8f8f.gif');
- background-size: 100% auto; /* 100% width, auto height */
+/* background-size: 100% auto; /* 100% width, auto height */
 }
 
 h1 {
@@ -29,6 +28,14 @@ h1 {
     color: rgb(66, 192, 255);
 }
 
+.cross-ascii {
+  margin-left: 50%; 
+  margin-right: 50%; 
+  z-index: -1;
+  display:block;
+  position: absolute;
+}
+
 .about-txt { /* about text div */
     width: 50%;
     margin: 0 auto; /* center div */  
@@ -39,8 +46,8 @@ h1 {
     display: fixed;
     justify-content: center;
     align-items: center;
-    background-color: black;
     padding: 100px;
+    
   }
 
   
@@ -59,12 +66,12 @@ h1 {
       white-space: nowrap;
     order: 0;
   
-    color: rgb(157, 217, 255); 
+    color: rgb(144, 144, 144); 
     text-shadow:
-      0 0 5px rgb(154, 221, 255), /* Smaller, sharper glow */
-      0 0 10px rgb(135, 213, 255), /* Medium glow */
-      0 0 20px rgb(206, 228, 240), /* Larger, softer glow */
-      0 0 40px rgb(165, 224, 255); /* Even larger, softer glow */
+      0 0 5px rgb(104, 104, 104), /* Smaller, sharper glow */
+      0 0 10px rgb(115, 115, 115), /* Medium glow */
+      0 0 20px rgb(88, 88, 88), /* Larger, softer glow */
+      0 0 40px rgb(58, 58, 58); /* Even larger, softer glow */
       
   }
 
@@ -79,12 +86,13 @@ h1 {
     font-size: 20px; 
     word-spacing: 3px; 
     font-style: normal;
-    color: white; 
-    text-shadow:
-      0 0 5px rgb(0, 41, 63), /* Smaller, sharper glow */
-      0 0 10px rgb(38, 179, 255), /* Medium glow */
-      0 0 20px rgb(38, 179, 255), /* Larger, softer glow */
-      0 0 40px rgb(194, 234, 255); /* Even larger, softer glow */
+     /* GLOW */ 
+     color: white; 
+     text-shadow:
+       0 0 5px rgb(228, 228, 228), /* Smaller, sharper glow */
+       0 0 10px rgb(178, 178, 178), /* Medium glow */
+       0 0 20px rgb(78, 78, 78), /* Larger, softer glow */
+       0 0 40px rgb(35, 35, 35); /* Even larger, softer glow */
       
   }
   
