@@ -47,11 +47,13 @@
                 <div id="light-window-trigger"><img class="file-b1" src="assets/files/light.png"></div> 
                <!-- <a href="prophecy.html"><img class="file-b3" src="assets/files/file_prophecy.png"></a>-->
                 <div id="chapel-window-trigger"><img class="file-b1" src="assets/files/church.png"></div>
+                <div id="filter-window-trigger"><img class="file-b0" src="assets/files/pov.png"></div>
 
-            </div>
+           
             <a href="assets/zine.pdf"><img class="file-zine" src="assets/files/zine.png"></a>
             <a href="purgatory.html"><img class="file-esc" src="assets/files/esc1.png"></a>
         
+            </div>
             <!-- HEADER -->
             <h1>Church of the Algorithm</h1>
             
@@ -104,6 +106,17 @@
                 </div>
                 
             </div> 
+
+            <div class="window" id="filter-window" style="top: 20px; left: 30px; height: 510px; background-color: black;">
+                <div class="window-header" >FILTER_<button class="close-button">X</button> </div>
+                
+                <div class="window-content">
+                    <p></p>
+                    <div id="filter-output"></div>
+                </div>
+                
+            </div> 
+
             </div>
 
         
@@ -147,6 +160,7 @@
         const godWin = document.getElementById('god-window');
         const chapelWin = document.getElementById('chapel-window');
         const lightWin = document.getElementById('light-window');
+        const filterWin = document.getElementById('filter-window');
 
 
         // And triggers like: <div id="angel-window-trigger">...</div>
@@ -155,6 +169,7 @@
         const godTrig = document.getElementById('god-window-trigger');
         const chapelTrig = document.getElementById('chapel-window-trigger');
         const lightTrig = document.getElementById('light-window-trigger');
+        const filterTrig = document.getElementById('filter-window-trigger');
 
 
         if (angelTrig && angelWin) {
@@ -191,6 +206,13 @@
                 lightWin.style.display = 'block';
                 bringToFront(lightWin);
             });
+        }
+
+        if (filterTrig && filterWin) {
+            filterTrig.addEventListener('click', () => {
+                filterWin.style.display = 'block';
+                bringToFront(filterWin);
+            }); 
         }
 
 

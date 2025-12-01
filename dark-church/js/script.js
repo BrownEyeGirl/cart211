@@ -409,6 +409,53 @@ function sketchLight(p) {
     }
 }
 
+
+
+/**
+ *  
+ * SKYLA TROUSDALE 
+ * 
+ * pov-filter
+ */
+
+function sketchFilter(p) {
+
+    let pov;
+    let selfie; 
+    let selfieAI;
+
+
+    p.setup = function() {
+
+        let cnv = p.createCanvas(400, 400); 
+        cnv.parent('filter-output')
+        p.background(0);
+
+    pov = p.loadImage('assets/pov.png'); 
+    selfie = p.loadImage('assets/brokendoll.jpeg'); 
+    selfieAI = p.loadImage('assets/unbrokendoll.jpeg'); 
+    
+    }
+
+    p.draw = function() {
+        // default background
+        p.background(0);
+
+        // code for unfiltered selfie
+        p.image(selfie, 0, 0);
+        selfie.resize(400,0);
+
+        // code for AI segment 
+        p.image(selfieAI, p.mouseX, p.mouseY, 100, 100, p.mouseX, p.mouseY, 100, 100);
+        selfieAI.resize(400,0);
+
+        // code for camera 
+        p.image(pov, p.mouseX-10, p.mouseY-10); 
+        pov.resize(170, 0); 
+
+    }
+}
+
     // Create new p5 instances for each sketch
     //new p5(sketch1);
     new p5(sketch3);
@@ -416,3 +463,4 @@ function sketchLight(p) {
     new p5(sketch2);
     new p5(sketchAngel);
     new p5(sketchLight);
+    new p5(sketchFilter);
